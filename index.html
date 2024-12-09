@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Exam Schedule&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Basic Styles */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #f5f5f5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Logo Styling */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#logo {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto 20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Input and Button Styling */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.input-group {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="text"] {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 250px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #001F3F;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-left: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #002a70;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Schedule Table Styling */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>table {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>th, td {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>th {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #001F3F;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Exam Instructions Styling */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#examInstructions {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 30px auto 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>#examInstructions h3 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Error Message Styling */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.error {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: red;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Download Buttons Styling */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#downloadButtons {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Responsive Design */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 600px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input[type="text"] {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width: 80%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>table {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Include Libraries --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Logo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;img id="logo" src="https://i.imgur.com/2cNFFgN.png" alt="School Logo"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Exam Schedule Lookup&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="studentID" placeholder="Enter Student ID"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="getScheduleBtn"&gt;Get Schedule&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="schedule"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="downloadButtons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="pdfBtn"&gt;Download as PDF&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="imgBtn"&gt;Download as Image&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Configuration</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXS6TVQCglrubRyIouYReowm0Z6ky9CqlQke7OWezc9RxiyDZTEugzENmyP5rTCcJB93YF4UQnCWzs/pub?gid=0&amp;single=true&amp;output=csv"; // Your CSV URL</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const footerImgUrl = "https://i.imgur.com/zIhg2Ig.png"; // Your footer image URL</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let scheduleData = null; // To store fetched CSV data</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let studentName = "";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Event Listeners</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('getScheduleBtn').addEventListener('click', fetchSchedule);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('pdfBtn').addEventListener('click', downloadPDF);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('imgBtn').addEventListener('click', downloadImage);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Fetch Schedule Function</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function fetchSchedule() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const studentID = document.getElementById('studentID').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!studentID) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert('Please enter a Student ID.');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Fetch CSV data if not already fetched</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!scheduleData) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Papa.parse(CSV_URL, {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>download: true,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>header: true,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>complete: (results) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scheduleData = results.data;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>displaySchedule(studentID);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>error: (err) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.error('Error fetching CSV:', err);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Could not load schedule data.');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>displaySchedule(studentID);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Display Schedule Function</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function displaySchedule(studentID) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const studentRow = scheduleData.find(row =&gt; row['Student ID'] === studentID);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const scheduleDiv = document.getElementById('schedule');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const downloadButtonsDiv = document.getElementById('downloadButtons');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>scheduleDiv.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>scheduleDiv.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>downloadButtonsDiv.style.display = 'none';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!studentRow) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>scheduleDiv.innerHTML = '&lt;p class="error"&gt;Student ID not found.&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>scheduleDiv.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>studentName = studentRow['Name'];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const headers = Object.keys(studentRow);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Extract schedule info (assuming 'Student ID', 'Name', followed by triplet columns for each exam: 'Day &amp; Session', 'Course', 'Room')</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let scheduleRows = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for(let i = 2; i &lt; headers.length; i += 3) { // Adjust step if necessary based on CSV structure</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const daySession = studentRow[headers[i]] || 'n/a';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const course = studentRow[headers[i+1]] || 'n/a';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const room = studentRow[headers[i+2]] || 'n/a';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>scheduleRows.push({ daySession, course, room });</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>let html = `&lt;h2&gt;Exam Schedule for ${studentName}&lt;/h2&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;div id="scheduleContent"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Day &amp; Session&lt;/th&gt;&lt;th&gt;Course&lt;/th&gt;&lt;th&gt;Room&lt;/th&gt;&lt;/tr&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>scheduleRows.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>html += `&lt;tr&gt;&lt;td&gt;${entry.daySession}&lt;/td&gt;&lt;td&gt;${entry.course}&lt;/td&gt;&lt;td&gt;${entry.room}&lt;/td&gt;&lt;/tr&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;/table&gt;&lt;/div&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Add exam instructions</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;div id="examInstructions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Exam Instructions&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Arrive at your examination room at least 10 minutes before the scheduled start time.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Leave all personal belongings and exam materials outside the examination room.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Technological devices such as mobile phones and smartwatches are strictly prohibited.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Maintain silence inside the examination hall. Any whispering or signaling to fellow students will result in the cancellation of your exam.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Raise your hand and wait for the teacher's attention before making any requests or inquiries.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Carefully read the instructions on the front page of your exam paper before starting.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Teachers will only address questions once during the exam. Read all questions thoroughly and prepare your inquiries before the teacher arrives.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;If you finish early, your exam will not be collected until the designated end time. You are not permitted to study other materials or work on anything else until all exams have been collected.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Bathroom use is only allowed in emergencies.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;During recess between exams, students must remain on the High School floor (Third Floor).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Food can be purchased from the senior patio area.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Students are permitted to leave campus after completing their second session exam for the day.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;We all wish you the best of luck!&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>scheduleDiv.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>scheduleDiv.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>downloadButtonsDiv.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Download PDF Function</p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function downloadPDF() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const { jsPDF } = window.jspdf;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const doc = new jsPDF('p', 'mm', 'a4');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pageWidth = doc.internal.pageSize.getWidth();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pageHeight = doc.internal.pageSize.getHeight();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const margin = 10;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let yPosition = margin;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add logo</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(document.getElementById('logo').src) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const img = new Image();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>img.crossOrigin = 'Anonymous';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>img.src = document.getElementById('logo').src;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>await img.decode();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>const imgWidth = pageWidth - 2 * margin;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const imgHeight = (img.height * imgWidth) / img.width;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>doc.addImage(img, 'PNG', margin, yPosition, imgWidth, imgHeight);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>yPosition += imgHeight + 5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add student name</p>
+<p class="p1"><span class="Apple-converted-space">        </span>doc.setFontSize(14);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>doc.text(studentName, pageWidth / 2, yPosition, { align: 'center' });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>yPosition += 10;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Create temporary container for schedule and instructions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const tempDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.width = `${pageWidth - 2 * margin}px`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.backgroundColor = 'white';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.padding = '0';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.margin = '0 auto';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.textAlign = 'center';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.fontSize = '12px';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Clone schedule and instructions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const scheduleContent = document.getElementById('scheduleContent').cloneNode(true);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.appendChild(scheduleContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const instructionsContent = document.getElementById('examInstructions').cloneNode(true);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.appendChild(instructionsContent);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.appendChild(tempDiv);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Use html2canvas to capture the tempDiv</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const canvas = await html2canvas(tempDiv, {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>scale: 2,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>useCORS: true,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: tempDiv.scrollWidth,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: tempDiv.scrollHeight,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.removeChild(tempDiv);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const imgData = canvas.toDataURL('image/png');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const imgProps = doc.getImageProperties(imgData);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let imgWidth = pageWidth - 2 * margin;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let imgHeight = (imgProps.height * imgWidth) / imgProps.width;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Check if content fits on the page</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(yPosition + imgHeight &gt; pageHeight - margin) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Scale down to fit</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const availableHeight = pageHeight - yPosition - margin;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const scaleFactor = availableHeight / imgHeight;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>imgHeight = availableHeight;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>imgWidth = imgWidth * scaleFactor;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>doc.addImage(imgData, 'PNG', margin, yPosition, imgWidth, imgHeight);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>yPosition += imgHeight + 5;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add footer</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(footerImgUrl) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const footerImg = new Image();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>footerImg.crossOrigin = 'Anonymous';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>footerImg.src = footerImgUrl;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>await footerImg.decode();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>const fWidth = pageWidth - 2 * margin;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const fHeight = (footerImg.height * fWidth) / footerImg.width;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const fY = pageHeight - margin - fHeight;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Check if footer overlaps</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if(yPosition &gt; fY - 10) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>doc.addPage();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>yPosition = margin;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>doc.addImage(footerImg, 'PNG', margin, fY, fWidth, fHeight);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Save the PDF</p>
+<p class="p1"><span class="Apple-converted-space">        </span>doc.save('Exam_Schedule.pdf');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.error('Error generating PDF:', error);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert('An error occurred while generating the PDF. Please try again.');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Download Image Function</p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function downloadImage() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Create a temporary container</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const tempDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.backgroundColor = 'white';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.padding = '20px';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.textAlign = 'center';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.style.width = '800px'; // Fixed width for consistency</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add logo</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(document.getElementById('logo').src) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const imgLogo = document.createElement('img');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>imgLogo.src = document.getElementById('logo').src;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>imgLogo.style.width = '100%';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>tempDiv.appendChild(imgLogo);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add student name</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const nameElement = document.createElement('h2');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nameElement.textContent = studentName;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.appendChild(nameElement);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Clone schedule and instructions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const scheduleContent = document.getElementById('scheduleContent').cloneNode(true);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.appendChild(scheduleContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const instructionsContent = document.getElementById('examInstructions').cloneNode(true);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tempDiv.appendChild(instructionsContent);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add footer</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(footerImgUrl) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const imgFooter = document.createElement('img');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>imgFooter.src = footerImgUrl;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>imgFooter.style.width = '100%';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>tempDiv.appendChild(imgFooter);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.appendChild(tempDiv);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Capture the content</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const canvas = await html2canvas(tempDiv, {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>scale: 2,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>useCORS: true,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>width: tempDiv.scrollWidth,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>height: tempDiv.scrollHeight,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.removeChild(tempDiv);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Create image download link</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const imgData = canvas.toDataURL('image/png');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const link = document.createElement('a');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.href = imgData;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.download = 'Exam_Schedule.png';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.appendChild(link);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>link.click();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.removeChild(link);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.error('Error generating image:', error);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert('An error occurred while generating the image. Please try again.');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
